@@ -5,27 +5,30 @@ class Matrix:
         self.m=m
         self.n=n
         if n==None:
-            Mat=int([0])*m
+            self.Mat=int([0])*m
         else:
-            Mat=int([0])*m
-            for a in range (m):
-                Mat[a]=[0]*n
+            self.Mat=int([0])*m
+            for a in range(m):
+                self.Mat[a]=[0]*n
 
     def __add__(self, other):
-        pass
+        for a in range (self.m):
+            for b in range (self.n):
+                self.Mat[a,b]=self.Mat[a,b]+other.Mat[a,b]
+        return self.Mat
 
     def determinant (self):
         pass
 
     def __eq__(self, other):
         flag=0
-        for a in range (m):
-            for b in range (n):
-                if Mat[a,b]:
+        for a in range (self.m):
+            for b in range (self.n):
+                if self.Mat[a,b]:
                     pass
 
     def get(self, i, j):
-        return Mat(i,j)
+        return self.Mat(i,j)
 
     def get_m(self):
         return self.m
@@ -53,4 +56,3 @@ class Matrix:
 
     def __truediv__(self, other):
         pass
-    
